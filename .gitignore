@@ -1,1 +1,2 @@
 *.pyc
+voting/vote/migrations/*
