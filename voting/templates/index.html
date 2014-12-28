@@ -1,11 +1,55 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
-    <head>
-        <title>eVoting System | Student Council</title>
-    </head>
-    <body>
-        <h1>Welcome to Student Council</h1>
-        hello world! 
-        <strong>{{message}}</strong><br />
-    </body>
+<head>
+	<title>eVoting System | Student Council</title>
+
+	<link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
+
+	<script src="{% static "js/bootstrap.js" %}"></script>
+</head>
+<!-- Nav bar begins -->
+<body>
+	<div class="navbar navbar-default">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">eVoting System | NIT-Warangal</a>
+		</div>
+		<div class="navbar-collapse collapse navbar-inverse-collapse">
+			<ul class="nav navbar-nav">
+				<li class="active"><a href="#">Active</a></li>
+				<li><a href="#">Link</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/login">Login</a></li>
+				<li><a href="/signup">SignUp</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- Nav bar ends -->
+	<div class="row">
+		<div class="col-lg-6" style="text-align:center;">
+	        <div class="bs-component">
+	        	<img src="{% static "images/nitw.png" %}" alt="National Institute of Technology - Warangal">
+	        </div>
+	      </div>
+		<div class="col-lg-6">
+			<h1>Welcome to Student Council Elections</h1>
+			<div class="bs-component">
+				<blockquote>
+					<p>Voting is the most precious right of every citizen, and we have a moral obligation to ensure the integrity of our voting process.</p>
+					<small>Hillary Clinton</small>
+				</blockquote>
+			</div>
+			<div class="bs-component">
+					hello world! 
+				<strong>{{message}}</strong><br />
+			</div>
+		</div>
+    </div>
+</body>
 </html>

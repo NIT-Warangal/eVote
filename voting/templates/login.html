@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
+<script src="{% static "js/bootstrap.js" %}"></script> <!-- JavaScript -->
 <form class="form-horizontal" role="form" action="" method="post">
 <fieldset>
 
 <!-- Form Name -->
 <legend>Login</legend>
-
+{% if checking == 1 %}
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>{{message}}</strong>
+</div>
+{% endif %}
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="username">Username</label>  
@@ -33,3 +42,4 @@
 
 </fieldset>
 </form>
+</html>
