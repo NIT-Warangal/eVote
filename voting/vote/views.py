@@ -6,8 +6,7 @@ from django.http import HttpResponse
 from vote.models import Students, Invigilators, Contestants, Campaigning
 
 def index(request):
-	context_dict = {'message': "Welcome to the eVoting System to select the student council"}
-	return render(request, 'index.html', context_dict)
+	return render(request, 'index.html')
 
 def loginpage(request):
 	if request.method == 'POST':
@@ -26,3 +25,7 @@ def loginpage(request):
 			return render(request,'login.html', context_dict)
 	context_dict = {'checking':0, 'message':"Please login"}
 	return render(request, 'login.html')
+
+def logoutpage(request):
+	logout(request)
+	return render(request, 'index.html')

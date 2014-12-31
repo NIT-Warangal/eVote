@@ -2,8 +2,12 @@
 <html>
     <head>
         <title>eVoting System | Student Council</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
+        <script src="{% static "js/bootstrap.js" %}"></script>
     </head>
     <body>
-        <h1>Login Success</h1>
+        {% include 'navbar.html' %}
+        {{user}}
     </body>
 </html>
