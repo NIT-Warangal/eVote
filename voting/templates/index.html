@@ -26,11 +26,19 @@
 					<small>Hillary Clinton</small>
 				</blockquote>
 			</div>
+			{% if not user.is_authenticated %}
 			<div class="bs-component">
 				<a href="/login" class="btn btn-primary">Login</a>
 
-				<a href="/register" class="btn btn-success">Register</a>
+				<a href="/signup" class="btn btn-success">Register</a>
 			</div>
+			{% else %}
+			<div class="bs-component">
+				<div class="well">
+					Welcome to the 2015 Student council Elections.
+				</div>
+			</div>
+			{% endif %}
 		</div>
     </div>
 </body>

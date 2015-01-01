@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
+<script src="{% static "js/bootstrap.js" %}"></script> <!-- JavaScript -->
+{% include 'navbar.html' %}
+<form class="form-horizontal" role="form" action="" method="post">
+<fieldset>
+
+<!-- Form Name -->
+{% if checking == 1 %}
+<div class="alert alert-dismissable alert-danger">
+  <button type="button" class="close" data-dismiss="alert">×</button>
+  <strong>{{message}}</strong>
+</div>
+{% endif %}
+
+</fieldset>
+</form>
+</html>
