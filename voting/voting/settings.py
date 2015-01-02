@@ -62,7 +62,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'evoting',
         'USER': 'root',
-        'PASSWORD': ''
+        'PASSWORD': 'root'
     }
 }
 

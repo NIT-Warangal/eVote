@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
 # Create your views here.
+from django.contrib import messages
 from django.http import HttpResponse, HttpResponseRedirect
 from vote.models import Students, Invigilators, Contestants, Campaigning
 from vote.forms import StudentForm
@@ -27,12 +28,12 @@ def loginpage(request):
 				context_dict = {'username':username}
 				return render(request,'loggedin.html',context_dict)
 			else:
-				context_dict = {'username':username, 'checking':1, 'message':"User Disabled. Please contact administrator"}
+				messages.info(request,"User Disabled. Please contact administrator")
 				return render(request,'login.html')
 		else:
-			context_dict = {'username':username, 'checking':1, 'message':"Your username or password is incorrect."}
-			return render(request,'login.html', context_dict)
-	context_dict = {'checking':0, 'message':"Please login"}
+			messages.error(request,"Your username or password is incorrect.")
+			return HttpResponseRedirect('/login')
+	messages.info(request, "Please login")
 	return render(request, 'login.html')
 
 def signuppage(request):
@@ -53,8 +54,9 @@ def signuppage(request):
 		student.section = request.POST['section']
 		student.voted = 0
 		student.save()
-		context_dict = {'message':'You have successfully registered.', 'checking':1}
-		return render(request, 'login.html', context_dict)
+		# context_dict = {'message':'You have successfully registered.', 'checking':1}
+		messages.success(request,"You have registered successfully.")
+		return render(request, 'login.html')
 	myform=StudentForm()
 	return render(request, 'signup.html',{'myform':myform})
 
