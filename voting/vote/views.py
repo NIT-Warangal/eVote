@@ -33,7 +33,7 @@ def loginpage(request):
 		else:
 			messages.error(request,"Your username or password is incorrect.")
 			return HttpResponseRedirect('/login')
-	messages.info(request, "Please login")
+	messages.success(request, "Please login")
 	return render(request, 'login.html')
 
 def signuppage(request):
@@ -54,7 +54,6 @@ def signuppage(request):
 		student.section = request.POST['section']
 		student.voted = 0
 		student.save()
-		# context_dict = {'message':'You have successfully registered.', 'checking':1}
 		messages.success(request,"You have registered successfully.")
 		return render(request, 'login.html')
 	myform=StudentForm()
