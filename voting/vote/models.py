@@ -14,6 +14,8 @@ class Students(models.Model):
 	section = models.CharField(choices=SECTION_CHOICES, default=SECA, max_length=10)
 	voted = models.BooleanField(default=False)
 	# Username should be here to map these fields with the authentication.
+	def __unicode__(self):
+		return self.userdetail.username
 
 class Invigilators(models.Model):
 	# Other information that is needed for the Invigilators

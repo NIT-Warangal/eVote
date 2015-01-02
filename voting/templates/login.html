@@ -1,16 +1,5 @@
-{% load staticfiles %}
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
-<script type="text/javascript" src="{%static "js/jquery.min.js"%}"></script>
-<script src="{% static "js/bootstrap.js" %}"></script> <!-- JavaScript -->
-{% include 'navbar.html' %}
-{%if messages%}
-{% for message in messages%}
-    <div class="alert alert-{% if message.tags == 'info'%}info{%elif message.tags == 'error'%}danger{%else%}{{message.tags}}{%endif%} fade in" style="text-align:center;">
-      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>{{message|safe}}
-    </div>
-{% endfor %}
-{%endif%}
-
+{% extends "layout/header.html" %}
+{% block content %}
 <form class="form-horizontal" role="form" action="" method="post">
 <fieldset>
 
@@ -45,4 +34,4 @@
 
 </fieldset>
 </form>
-</html>
+{% endblock %}

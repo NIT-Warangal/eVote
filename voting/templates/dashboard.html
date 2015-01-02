@@ -1,0 +1,14 @@
+{% extends "layout/header.html" %}
+{% block content %}
+<center>{{user.username}}<br><p>{{user.email}}</p></center>
+<div class="container">
+    <div class="row">
+        <div class="col-span-6">
+            <button class="btn btn-primary btn-block">Register Yourself as a candidate</button>  
+        </div>
+        <div class="col-span-6">
+            <button class="btn btn-success btn-block">Vote for your branch candidate</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-{% load staticfiles %}
-<link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
-<script src="{% static "js/bootstrap.js" %}"></script> <!-- JavaScript -->
-{% include 'navbar.html' %}
-{{form}}
+{% extends "layout/header.html" %}
+{% block content %}
+{% if not user.is_authenticated %}
 <form class="form-horizontal" role="form" action="" method="post">
 <fieldset>
 <div class="form-group">
@@ -84,4 +81,9 @@
 </div>
 </fieldset>
 </form>
-</html>
+{% else %}
+<div class="jumbotron">
+  <center> <h3>You have already registered. Please return to your <a href="/dashboard">dashboard</a></h3> </center>
+</div>
+{% endif %}
+{% endblock %}
