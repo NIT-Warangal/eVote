@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect
 from vote.models import Students, Invigilators, Contestants, Campaigning
+from vote.forms import StudentForm
 
 def index(request):
 	try:
@@ -54,7 +55,8 @@ def signuppage(request):
 		student.save()
 		context_dict = {'message':'You have successfully registered.', 'checking':1}
 		return render(request, 'login.html', context_dict)
-	return render(request, 'signup.html')
+	myform=StudentForm()
+	return render(request, 'signup.html',{'myform':myform})
 
 def logoutpage(request):
 	print "Logout Request Sent!"
