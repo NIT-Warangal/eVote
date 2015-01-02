@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.models import User
 
 # Create your views here.
 from django.http import HttpResponse, HttpResponseRedirect
@@ -34,6 +35,25 @@ def loginpage(request):
 	return render(request, 'login.html')
 
 def signuppage(request):
+	if request.method == 'POST':
+		users = User()
+		users.username = request.POST['username']
+		users.password = request.POST['password']
+		users.email = request.POST['email']
+		user = User.objects.create_user(users.username, users.password, users.email)
+		print user.id
+		student = Students()
+		student.userdetail = user
+		student.regno = request.POST['regno']
+		student.rollno = request.POST['rollno']
+		student.year = request.POST['year']
+		student.branch = request.POST['branch']
+		student.studyclass = request.POST['studyclass']
+		student.section = request.POST['section']
+		student.voted = 0
+		student.save()
+		context_dict = {'message':'You have successfully registered.', 'checking':1}
+		return render(request, 'login.html', context_dict)
 	return render(request, 'signup.html')
 
 def logoutpage(request):

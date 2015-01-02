@@ -3,17 +3,89 @@
 <link rel="stylesheet" href="{% static "css/bootstrap.css" %} ">
 <script src="{% static "js/bootstrap.js" %}"></script> <!-- JavaScript -->
 {% include 'navbar.html' %}
+{{form}}
 <form class="form-horizontal" role="form" action="" method="post">
 <fieldset>
-
-<!-- Form Name -->
-{% if checking == 1 %}
-<div class="alert alert-dismissable alert-danger">
-  <button type="button" class="close" data-dismiss="alert">×</button>
-  <strong>{{message}}</strong>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Username</label>  
+  <div class="col-md-4">
+  <input id="username" name="username" type="text" placeholder="Enter your username here" class="form-control input-md" required="">
+    
+  </div>
 </div>
-{% endif %}
 
+<div class="form-group">
+  <label class="col-md-4 control-label" for="password">Password</label>
+  {% csrf_token %}
+  <div class="col-md-4">
+    <input id="password" name="password" type="password" placeholder="Enter password" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Email ID</label>  
+  <div class="col-md-4">
+  <input id="emailid" name="email" type="email" placeholder="Enter your email here" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Registration No.</label>  
+  <div class="col-md-4">
+  <input id="regno" name="regno" type="text" placeholder="Enter your registration no. here" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Roll no.</label>  
+  <div class="col-md-4">
+  <input id="rollno" name="rollno" type="text" placeholder="Enter your roll no. here" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Year</label>  
+  <div class="col-md-4">
+  <input id="year" name="year" type="text" placeholder="Enter your year of study" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">branch.</label>  
+  <div class="col-md-4">
+  <input id="branch" name="branch" type="text" placeholder="Enter your branch here" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Class</label>  
+  <div class="col-md-4">
+  <input id="studyclass" name="studyclass" type="text" placeholder="Enter your class here" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="username">Section</label>  
+  <div class="col-md-4">
+  <input id="section" name="section" type="text" placeholder="Enter your section here" class="form-control input-md" required="">
+    
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit"></label>
+  <div class="col-md-4">
+    <button id="submit" name="submit" class="btn btn-success">Sign Up</button>
+    <a href="/login" id="alreadylogin" name="login" class="btn btn-primary">Already Have an ID ? Login.</a>
+  </div>
+</div>
 </fieldset>
 </form>
 </html>
