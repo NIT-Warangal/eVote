@@ -2,83 +2,83 @@
 {% block content %}
 {% if not user.is_authenticated %}
 <form class="form-horizontal" role="form" action="" method="post">
-<fieldset>
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Username</label>  
-  <div class="col-md-4">
-  <input id="username" name="username" type="text" placeholder="Enter your username here" class="form-control input-md" required="">
-    
-  </div>
-</div>
+  <fieldset>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Username</label>  
+      <div class="col-md-4">
+        <input id="username" name="username" type="text" placeholder="Enter your username here" class="form-control input-md" required="">
+        
+      </div>
+    </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="password">Password</label>
-  {% csrf_token %}
-  <div class="col-md-4">
-    <input id="password" name="password" type="password" placeholder="Enter password" class="form-control input-md" required="">
-    
-  </div>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="password">Password</label>
+      {% csrf_token %}
+      <div class="col-md-4">
+        <input id="password" name="password" type="password" placeholder="Enter password" class="form-control input-md" required="">
+        
+      </div>
+    </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Email ID</label>  
-  <div class="col-md-4">
-  <input id="emailid" name="email" type="email" placeholder="Enter your email here" class="form-control input-md" required="">
-    
-  </div>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Email ID</label>  
+      <div class="col-md-4">
+        <input id="emailid" name="email" type="email" placeholder="Enter your email here" class="form-control input-md" required="">
+        
+      </div>
+    </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Registration No.</label>  
-  <div class="col-md-4">
-  <input id="regno" name="regno" type="text" placeholder="Enter your registration no. here" class="form-control input-md" required="">
-    
-  </div>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Registration No.</label>  
+      <div class="col-md-4">
+        <input id="regno" name="regno" type="text" placeholder="Enter your registration no. here" class="form-control input-md" required="">
+        
+      </div>
+    </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Roll no.</label>  
-  <div class="col-md-4">
-  <input id="rollno" name="rollno" type="text" placeholder="Enter your roll no. here" class="form-control input-md" required="">
-    
-  </div>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Roll no.</label>  
+      <div class="col-md-4">
+        <input id="rollno" name="rollno" type="text" placeholder="Enter your roll no. here" class="form-control input-md" required="">
+        
+      </div>
+    </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Year</label>  
-  <div class="col-md-4">
- {{myform.year}}   
-  </div>
-</div>
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="username">Year</label>  
+      <div class="col-md-4">
+       {{myform.year}}   
+     </div>
+   </div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Class</label>  
-  <div class="col-md-4">
-    {{myform.studyclass}}
+   <div class="form-group">
+    <label class="col-md-4 control-label" for="username">Class</label>  
+    <div class="col-md-4">
+      {{myform.studyclass}}
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">branch.</label>  
-  <div class="col-md-4">
-    {{myform.branch}}
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="username">branch.</label>  
+    <div class="col-md-4">
+      {{myform.branch}}
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="username">Section</label>  
-  <div class="col-md-4">
-    {{myform.section}}
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="username">Section</label>  
+    <div class="col-md-4">
+      {{myform.section}}
+    </div>
   </div>
-</div>
 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="submit"></label>
-  <div class="col-md-4">
-    <button id="submit" name="submit" class="btn btn-success">Sign Up</button>
-    <a href="/login" id="alreadylogin" name="login" class="btn btn-primary">Already Have an ID ? Login.</a>
+  <div class="form-group">
+    <label class="col-md-4 control-label" for="submit"></label>
+    <div class="col-md-4">
+      <button id="submit" name="submit" class="btn btn-success">Sign Up</button>
+      <a href="/login" id="alreadylogin" name="login" class="btn btn-primary">Already Have an ID ? Login.</a>
+    </div>
   </div>
-</div>
 </fieldset>
 </form>
 {% else %}

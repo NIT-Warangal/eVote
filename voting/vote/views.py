@@ -16,7 +16,15 @@ def index(request):
 	except:	
 		return render(request, 'index.html')
 
+def candidates(request):
+	return render(request, 'candidates.html')
+
+def thankyou(request):
+	return render(request, 'thankyou.html')
+
 def dashboard(request):
+	user = request.user
+	print user
 	return render(request,'dashboard.html')
 
 def is_member(user,member):

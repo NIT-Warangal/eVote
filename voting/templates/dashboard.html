@@ -1,13 +1,15 @@
 {% extends "layout/header.html" %}
 {% block content %}
-<center>{{user.username}}<br><p>{{user.email}}</p></center>
+
 <div class="container">
     <div class="row">
-        <div class="col-span-6">
+    	<h1> Hello <a href="mailto:{{user.email}}">{{user}}</a> </h1>
+    	<h3>Welcome to the Student Council elections this year. For a change and a transparent process, all of the elections this year are held online.</h3>
+        <div class="col-lg-6">
             <button class="btn btn-primary btn-block">Register Yourself as a candidate</button>  
         </div>
-        <div class="col-span-6">
-            <button class="btn btn-success btn-block">Vote for your branch candidate</button>
+        <div class="col-lg-6">
+            <a class="btn btn-success btn-block" href="/candidates/">Vote for your branch candidate</a>
         </div>
     </div>
 </div>

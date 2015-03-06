@@ -1,2 +1,3 @@
 *.pyc
 voting/vote/migrations/*
+venv/*

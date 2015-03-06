@@ -1,0 +1,23 @@
+{% extends "layout/header.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+    	<h1>Thank you for voting. Every single vote counts to have a stronger and a better council !!</h1>
+        <hr>
+        <h3>Show your support by sharing on social media and asking other students to Vote</h3>
+        <div class="col-lg-6">
+        <!-- Facebook -->
+        <iframe src="//www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwsdc.nitw.ac.in%2Fstudent%2FeVote&amp;layout=button_count" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowTransparency="true"></iframe>
+        </div>
+        
+        <div class="col-lg-6">
+            <!-- Twitter -->
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="wsdc.nitw.ac.in/student/eVote" data-text="I just voted now for the student council, Vote and make a difference" data-size="large">Tweet</a>
+
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+            </script>
+        </div>
+    </div>
+</div>
+{% endblock %}
